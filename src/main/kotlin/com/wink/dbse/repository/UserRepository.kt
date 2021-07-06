@@ -56,6 +56,5 @@ interface UserRepository : JpaRepository<UserEntity, Long> {
     @Query("update UserEntity u set u.bangStreak = 0 where u.userId = ?1")
     fun clearBangStreak(userId: Long)
 
-
     fun findUserEntitiesByRoleExpiryIsBefore(localDateTime: LocalDateTime) : List<UserEntity>
 }
